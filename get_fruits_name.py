@@ -1,4 +1,3 @@
-import csv
 def get_frutis_name(data:str)->list:
     """
     This function returns the names of the fruits
@@ -8,15 +7,13 @@ def get_frutis_name(data:str)->list:
     returns:
         list: list of fruits names
     """
-    fruits=[]
-    data=open('fruits.csv')
-    reader=csv.reader(data)
-    for i in reader:
-        
-       fruits.append(i[:1])
-    return fruits[1:]
+    names=[]
+    r=data.split()
+    for i in r[1:]:
+        names.append(i.split(',')[0])
 
-
-print(get_frutis_name('data'))
+    return names 
+data=open('fruits.csv').read()
+print(get_frutis_name(data))
 
     
