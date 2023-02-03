@@ -12,6 +12,7 @@ def get_frutis_name(data:str)->list:
     data=open('fruits.csv')
     reader=csv.reader(data)
     for i in reader:
+        
        fruits.append(i[:1])
     return fruits[1:]
 
